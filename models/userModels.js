@@ -12,13 +12,12 @@ const userSchema= new Schema({
     },
     phoneNumber:{
         type:Number,
-        require:[true,'Please enter your Mobile number']
+        require:[true,'Please enter your Mobile number'],
+        unique:true
     }
     
 },{
     timestamps:true
 });
-
- const User=mongoose.model('User',userSchema);
  
- module.exports=User;
+ module.exports= mongoose.model('user',userSchema);
